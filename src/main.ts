@@ -19,8 +19,8 @@ async function bootstrap() {
 
   // set swagger
   const config = new DocumentBuilder()
-    .setTitle('MPI CMS Microservice APIs')
-    .setDescription('Descriptions for MPI Content Management Service APIs')
+    .setTitle('MPI Product Microservice APIs')
+    .setDescription('Descriptions for MPI Product Management Service APIs')
     .setVersion('1.0')
     .build()
 
