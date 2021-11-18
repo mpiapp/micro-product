@@ -1,6 +1,8 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { CreateProductDTO } from './dto/create_product.dto';
+import { IdDTO } from './dto/id.dto';
+import { UpdateProductDTO } from './dto/update_product.dto';
 import { ProductService } from './product.service';
 import { Product } from './schema/product.schema';
 
@@ -29,4 +31,26 @@ export class ProductController {
         return this.productService.find()
     }
 
+    @ApiCreatedResponse({ type: Product, description: 'update a product' })
+    @ApiBadRequestResponse({ description: 'False Request Payload' })
+    @ApiParam({ name: 'id', required: true })
+    @Put(':id')
+    async update(@Param('id') id: IdDTO, @Body() body: UpdateProductDTO): Promise<Product> {
+        return this.productService.update(id, body)
+    }
+
+    @ApiOkResponse({ type: Product, description: 'get a product by ID' })
+    @ApiBadRequestResponse({ description: 'False Request Payload' })
+    @ApiParam({ name: 'id', required: true })
+    @Get(':id')
+    async findById(@Param('id') id: IdDTO): Promise<Product> {
+        return this.productService.findById(id)
+    }
+
+    @ApiOkResponse({ type: Product, description: 'delete a product by ID' })
+    @ApiBadRequestResponse({ description: 'False Request Payload' })
+    @Delete(':id')
+    async delete(@Param('id') id: IdDTO): Promise<Product> {
+        return this.productService.delete(id);
+    }
 }

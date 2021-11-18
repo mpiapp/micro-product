@@ -40,4 +40,8 @@ describe('ProductService', () => {
   it('should get list of products', async () => {
     expect(await service.find()).toEqual(ArrayOfObjectProduct);
   });
+
+  it('should delete a product', async () => {
+    expect(await service.delete(MockId)).toEqual(SuccsessGetProductById(StringMockId));
+  });
 });
