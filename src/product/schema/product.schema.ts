@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsIn } from "class-validator";
 import { Document, Schema as MongooseSchema } from "mongoose";
-import { SubProduct } from "./sub-product.schema";
+// import { SubProduct } from "../../sub-product/schema/sub-product.schema";
 
 export type ProductDocument = Product & Document;
 
