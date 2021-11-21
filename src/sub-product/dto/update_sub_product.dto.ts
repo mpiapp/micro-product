@@ -18,7 +18,7 @@ export class UpdateSubProductDTO {
     @ApiProperty()
     @Prop()
     @IsOptional()
-    image_sub_product: []
+    image_sub_product: any[]
 
     @ApiProperty()
     @Prop()

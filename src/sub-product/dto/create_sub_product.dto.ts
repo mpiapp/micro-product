@@ -25,7 +25,7 @@ export class CreateSubProductDTO {
 
     @ApiProperty()
     @Prop()
-    image_sub_product: []
+    image_sub_product: any[]
 
     @ApiProperty()
     @Prop()

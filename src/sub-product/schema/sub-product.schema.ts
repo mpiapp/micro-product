@@ -22,7 +22,7 @@ export class SubProduct {
 
     @ApiProperty()
     @Prop()
-    image_sub_product: []
+    image_sub_product: string[]
 
     @ApiProperty()
     @Prop()
