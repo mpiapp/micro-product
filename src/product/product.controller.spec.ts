@@ -1,5 +1,8 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
+import { SubProduct } from '../sub-product/schema/sub-product.schema';
+import { SubProductControllerMock } from '../sub-product/mocks/sub_product-controller.mock';
+import { SubProductService } from '../sub-product/sub-product.service';
 import { ProductControllerMock } from './mocks/product-controller.mock';
 import { ArrayOfObjectProduct, MockId, ProductPayload, StringMockId, SuccsessCreateProduct, SuccsessGetProductById, SuccsessUpdateProduct } from './mocks/product-payload.mock';
 import { ProductController } from './product.controller';
@@ -16,6 +19,10 @@ describe('ProductController', () => {
         ProductService, {
           provide: getModelToken(Product.name),
           useValue: ProductControllerMock
+        },
+        SubProductService, {
+          provide: getModelToken(SubProduct.name),
+          useValue: SubProductControllerMock
         },
     ]
     }).compile();
@@ -45,5 +52,9 @@ describe('ProductController', () => {
 
   it(`should delete a product (Controller)`, async () => {
     expect(await controller.delete(MockId)).toEqual(SuccsessGetProductById(StringMockId))
+  })
+
+  it(`should get a list of products & it's variance (Controller)`, async () => {
+    expect(await controller.findWithVariance()).toEqual("")
   })
 });

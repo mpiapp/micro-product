@@ -13,7 +13,7 @@ export const SubProductPayload = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: 20,
+    SKU: "20",
     quantity: 40
 }
 
@@ -24,7 +24,7 @@ export const SubProductPayloadService = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: 20,
+    SKU: "20",
     quantity: 40,
     slug_sub_product: "product123_50m_red"
 }
@@ -36,7 +36,7 @@ export const SuccsessCreateSubProduct = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: 20,
+    SKU: "20",
     quantity: 40,
     slug_sub_product: "product123_50m_red"
 }
@@ -49,7 +49,7 @@ export const SuccsessGetSubProductById = (id) => {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: 20,
+    SKU: "20",
     quantity: 40,
     slug_sub_product: "product123_50m_red"
     }
@@ -63,7 +63,7 @@ export const SuccsessUpdateSubProduct = (id) => {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: 20,
+    SKU: "20",
     quantity: 40,
     slug_sub_product: "product123_50m_red"
     }
@@ -77,7 +77,7 @@ export const ArrayOfObjectSubProduct = [
         image_sub_product: ["image1", "image2"],
         made_date: new Date('December 25, 1995 23:15:30'),
         expired_date: new Date('December 25, 2021 23:15:30'),
-        SKU: 20,
+        SKU: "20",
         quantity: 40,
         slug_sub_product: "product123_50m_red"
     },

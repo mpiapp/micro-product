@@ -33,7 +33,7 @@ export class UpdateSubProductDTO {
     @ApiProperty()
     @Prop()
     @IsOptional()
-    SKU: number
+    SKU: string
 
     @ApiProperty()
     @Prop()

@@ -115,9 +115,9 @@ export class Product {
     @Prop(ProductStorage)
     storage: ProductStorage
 
-    // @ApiProperty()
-    // @Prop()
-    // sub_products: [SubProduct]
+    @ApiProperty()
+    @Prop()
+    sub_products: any[]
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product)

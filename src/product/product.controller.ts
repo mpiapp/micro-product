@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CreateProductDTO } from './dto/create_product.dto';
 import { IdDTO } from './dto/id.dto';
 import { UpdateProductDTO } from './dto/update_product.dto';
@@ -29,6 +29,22 @@ export class ProductController {
     @Get()
     async find(): Promise<Product[]> {
         return this.productService.find()
+    }
+
+    @ApiOkResponse({ type: [Product], description: 'get product' })
+    @ApiBadRequestResponse({ description: 'False Request Payload' })
+    @Get('variances')
+    async findWithVariance(): Promise<Product[]> {
+        let products : any = await this.productService.find()
+
+        for( var i in products ) {
+            products[i] = {
+                ...products[i]['_doc'],
+                sub_products: await this.productService.findSubProduct(products[i]['_doc']._id.valueOf())
+            }
+        }
+
+        return products
     }
 
     @ApiCreatedResponse({ type: Product, description: 'update a product' })

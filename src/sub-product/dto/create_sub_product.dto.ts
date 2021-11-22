@@ -37,7 +37,7 @@ export class CreateSubProductDTO {
 
     @ApiProperty()
     @Prop()
-    SKU: number
+    SKU: string
 
     @ApiProperty()
     @Prop()

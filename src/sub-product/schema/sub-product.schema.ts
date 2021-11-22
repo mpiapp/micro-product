@@ -34,7 +34,7 @@ export class SubProduct {
 
     @ApiProperty()
     @Prop()
-    SKU: number
+    SKU: string
 
     @ApiProperty()
     @Prop()

@@ -1,5 +1,9 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
+import { ArrayOfObjectSubProduct } from '../sub-product/mocks/product-payload.mock';
+import { SubProductServiceMock } from '../sub-product/mocks/sub_product-service.mock';
+import { SubProduct } from '../sub-product/schema/sub-product.schema';
+import { SubProductService } from '../sub-product/sub-product.service';
 import { ArrayOfObjectProduct, MockId, ProductPayload, ProductPayloadService, StringMockId, SuccsessCreateProduct, SuccsessGetProductById, SuccsessUpdateProduct } from './mocks/product-payload.mock';
 import { ProductServiceMock } from './mocks/product-service.mock';
 import { ProductService } from './product.service';
@@ -14,6 +18,10 @@ describe('ProductService', () => {
         ProductService, {
           provide: getModelToken(Product.name),
           useValue: ProductServiceMock
+        },
+        SubProductService, {
+          provide: getModelToken(SubProduct.name),
+          useValue: SubProductServiceMock
         },
     ]
     }).compile();
@@ -43,5 +51,9 @@ describe('ProductService', () => {
 
   it('should delete a product', async () => {
     expect(await service.delete(MockId)).toEqual(SuccsessGetProductById(StringMockId));
+  });
+
+  it('should get a list of sub-products', async () => {
+    expect(await service.findSubProduct(StringMockId)).toEqual(ArrayOfObjectSubProduct);
   });
 });
