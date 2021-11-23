@@ -80,6 +80,23 @@ export class CreateProductDTO {
     @ApiProperty()
     @Prop()
     warehouse_id: string
+
+    @ApiProperty()
+    @Prop()
+    include_other_discount: boolean
+
+    @ApiProperty()
+    @Prop()
+    term_of_payment_id : string
+
+    @ApiProperty()
+    @Prop()
+    down_payment : number
+    
+    @ApiProperty()
+    @Prop()
+    @IsOptional()
+    SKU: string
     
     @ApiProperty()
     @Prop(ProductStorage)

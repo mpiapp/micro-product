@@ -33,7 +33,11 @@ export const ProductPayload = {
         level: "4a"
     },
     discount_price: 8000, 
-    reported_times: 0
+    reported_times: 0,
+    include_other_discount: true,
+    term_of_payment_id : "top001",
+    down_payment : 2000000,
+    SKU: "product001"
 }
 
 export const ProductPayloadService = {
@@ -64,7 +68,11 @@ export const ProductPayloadService = {
     },
     slug_product: "vendor123_pengupas_alpukat", 
     discount_price: 8000, 
-    reported_times: 0
+    reported_times: 0,
+    include_other_discount: true,
+    term_of_payment_id : "top001",
+    down_payment : 2000000,
+    SKU: "product001"
 }
 
 export const SuccsessCreateProduct = {
@@ -95,7 +103,11 @@ export const SuccsessCreateProduct = {
     },
     slug_product: "vendor123_pengupas_alpukat", 
     discount_price: 8000, 
-    reported_times: 0
+    reported_times: 0,
+    include_other_discount: true,
+    term_of_payment_id : "top001",
+    down_payment : 2000000,
+    SKU: "product001"
 }
 
 export const SuccsessGetProductById = (id) => {
@@ -127,7 +139,11 @@ export const SuccsessGetProductById = (id) => {
         },
         slug_product: "vendor123_pengupas_alpukat", 
         discount_price: 8000, 
-        reported_times: 0
+        reported_times: 0,
+        include_other_discount: true,
+        term_of_payment_id : "top001",
+        down_payment : 2000000,
+        SKU: "product001"
     }
 }
 
@@ -160,7 +176,11 @@ export const SuccsessUpdateProduct = (id) => {
         },
         slug_product: "vendor123_pengupas_alpukat", 
         discount_price: 8000, 
-        reported_times: 0
+        reported_times: 0,
+        include_other_discount: true,
+        term_of_payment_id : "top001",
+        down_payment : 2000000,
+        SKU: "product001"
     }
 }
 
@@ -193,7 +213,11 @@ export const ArrayOfObjectProduct = [
         },
         slug_product: "vendor123_pengupas_alpukat", 
         discount_price: 8000, 
-        reported_times: 0
+        reported_times: 0,
+        include_other_discount: true,
+        term_of_payment_id : "top001",
+        down_payment : 2000000,
+        SKU: "product001"
     },
     {   
         _id: 'Product2',
@@ -223,6 +247,10 @@ export const ArrayOfObjectProduct = [
         },
         slug_product: "vendor123_pengupas_pisang", 
         discount_price: 13500, 
-        reported_times: 0
+        reported_times: 0,
+        include_other_discount: false,
+        term_of_payment_id : "top002",
+        down_payment : 1000000,
+        SKU: "product002"
     }
 ]

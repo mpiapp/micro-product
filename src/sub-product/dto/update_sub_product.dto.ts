@@ -33,10 +33,10 @@ export class UpdateSubProductDTO {
     @ApiProperty()
     @Prop()
     @IsOptional()
-    SKU: string
+    quantity: number
 
     @ApiProperty()
     @Prop()
     @IsOptional()
-    quantity: number
+    safety_stock_quantity: number
 }

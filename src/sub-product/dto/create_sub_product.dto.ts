@@ -37,9 +37,10 @@ export class CreateSubProductDTO {
 
     @ApiProperty()
     @Prop()
-    SKU: string
+    quantity: number
 
     @ApiProperty()
     @Prop()
-    quantity: number
+    @IsOptional()
+    safety_stock_quantity: number
 }

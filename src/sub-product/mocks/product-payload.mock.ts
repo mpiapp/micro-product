@@ -13,8 +13,8 @@ export const SubProductPayload = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: "20",
-    quantity: 40
+    quantity: 40,
+    safety_stock_quantity: 5
 }
 
 export const SubProductPayloadService = {
@@ -24,9 +24,9 @@ export const SubProductPayloadService = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: "20",
     quantity: 40,
-    slug_sub_product: "product123_50m_red"
+    slug_sub_product: "product123_50m_red",
+    safety_stock_quantity: 5
 }
 
 export const SuccsessCreateSubProduct = {
@@ -36,22 +36,22 @@ export const SuccsessCreateSubProduct = {
     image_sub_product: ["image1", "image2"],
     made_date: new Date('December 25, 1995 23:15:30'),
     expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: "20",
     quantity: 40,
-    slug_sub_product: "product123_50m_red"
+    slug_sub_product: "product123_50m_red",
+    safety_stock_quantity: 5
 }
 
 export const SuccsessGetSubProductById = (id) => {
     return {
         id: id,
         product_id: "product123",
-    variance: "50m red",
-    image_sub_product: ["image1", "image2"],
-    made_date: new Date('December 25, 1995 23:15:30'),
-    expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: "20",
-    quantity: 40,
-    slug_sub_product: "product123_50m_red"
+        variance: "50m red",
+        image_sub_product: ["image1", "image2"],
+        made_date: new Date('December 25, 1995 23:15:30'),
+        expired_date: new Date('December 25, 2021 23:15:30'),
+        quantity: 40,
+        slug_sub_product: "product123_50m_red",
+        safety_stock_quantity: 5
     }
 }
 
@@ -59,13 +59,13 @@ export const SuccsessUpdateSubProduct = (id) => {
     return {
         id: id,
         product_id: "product123",
-    variance: "50m red",
-    image_sub_product: ["image1", "image2"],
-    made_date: new Date('December 25, 1995 23:15:30'),
-    expired_date: new Date('December 25, 2021 23:15:30'),
-    SKU: "20",
-    quantity: 40,
-    slug_sub_product: "product123_50m_red"
+        variance: "50m red",
+        image_sub_product: ["image1", "image2"],
+        made_date: new Date('December 25, 1995 23:15:30'),
+        expired_date: new Date('December 25, 2021 23:15:30'),
+        quantity: 40,
+        slug_sub_product: "product123_50m_red",
+        safety_stock_quantity: 5
     }
 }
 
@@ -77,9 +77,9 @@ export const ArrayOfObjectSubProduct = [
         image_sub_product: ["image1", "image2"],
         made_date: new Date('December 25, 1995 23:15:30'),
         expired_date: new Date('December 25, 2021 23:15:30'),
-        SKU: "20",
         quantity: 40,
-        slug_sub_product: "product123_50m_red"
+        slug_sub_product: "product123_50m_red",
+        safety_stock_quantity: 5
     },
     {   
         _id: 'SubProduct2',
@@ -90,6 +90,7 @@ export const ArrayOfObjectSubProduct = [
         expired_date: new Date('December 27, 2021 23:15:30'),
         SKU: 15,
         quantity: 50,
-        slug_sub_product: "product234_100m_blue"
+        slug_sub_product: "product234_100m_blue",
+        safety_stock_quantity: 8
     }
 ]

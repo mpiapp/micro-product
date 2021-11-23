@@ -34,11 +34,11 @@ export class SubProduct {
 
     @ApiProperty()
     @Prop()
-    SKU: string
+    quantity: number
 
     @ApiProperty()
     @Prop()
-    quantity: number
+    safety_stock_quantity: number
 }
 
 export const SubProductSchema = SchemaFactory.createForClass(SubProduct)

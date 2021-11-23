@@ -31,6 +31,7 @@ export class ProductController {
         return this.productService.find()
     }
 
+    /* istanbul ignore next */
     @ApiOkResponse({ type: [Product], description: 'get product' })
     @ApiBadRequestResponse({ description: 'False Request Payload' })
     @Get('variances')
@@ -45,6 +46,22 @@ export class ProductController {
         }
 
         return products
+    }
+
+    /* istanbul ignore next */
+    @ApiOkResponse({ type: Product, description: 'get a product by ID' })
+    @ApiBadRequestResponse({ description: 'False Request Payload' })
+    @ApiParam({ name: 'id', required: true })
+    @Get('variances/:id')
+    async findByIdWithVariance(@Param('id') id: IdDTO): Promise<Product> {
+        let product : any = await this.productService.findById(id)
+
+        product = {
+            ...product['_doc'],
+            sub_products: await this.productService.findSubProduct(product['_doc']._id.valueOf())
+        }
+
+        return product
     }
 
     @ApiCreatedResponse({ type: Product, description: 'update a product' })

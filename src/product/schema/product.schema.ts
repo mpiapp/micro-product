@@ -48,6 +48,10 @@ export class Product {
 
     @ApiProperty()
     @Prop()
+    vendor_name: string
+
+    @ApiProperty()
+    @Prop()
     name: string
 
     @ApiProperty()
@@ -77,6 +81,10 @@ export class Product {
     @ApiProperty()
     @Prop()
     discount_price: number
+
+    @ApiProperty()
+    @Prop()
+    include_other_discount: boolean
 
     @ApiProperty()
     @Prop()
@@ -118,6 +126,18 @@ export class Product {
     @ApiProperty()
     @Prop()
     sub_products: any[]
+
+    @ApiProperty()
+    @Prop()
+    term_of_payment_id : string
+
+    @ApiProperty()
+    @Prop()
+    down_payment : number
+    
+    @ApiProperty()
+    @Prop()
+    SKU: string
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product)

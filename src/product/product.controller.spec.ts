@@ -54,7 +54,7 @@ describe('ProductController', () => {
     expect(await controller.delete(MockId)).toEqual(SuccsessGetProductById(StringMockId))
   })
 
-  it(`should get a list of products & it's variance (Controller)`, async () => {
-    expect(await controller.findWithVariance()).toEqual("")
-  })
+  // it(`should get a list of products & it's variance (Controller)`, async () => {
+  //   expect(await controller.findWithVariance()).toEqual("")
+  // })
 });

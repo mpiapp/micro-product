@@ -65,15 +65,38 @@ export class UpdateProductDTO {
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     stock: number
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     minimum_order_quantity: number
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     warehouse_id: string
+
+    @ApiProperty()
+    @Prop()
+    @IsOptional()
+    include_other_discount: boolean
+
+    @ApiProperty()
+    @Prop()
+    @IsOptional()
+    term_of_payment_id : string
+
+    @ApiProperty()
+    @Prop()
+    @IsOptional()
+    down_payment : number
+    
+    @ApiProperty()
+    @Prop()
+    @IsOptional()
+    SKU: string
     
     @ApiProperty()
     @Prop(ProductStorage)
