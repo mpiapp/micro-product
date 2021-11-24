@@ -10,7 +10,9 @@ import { Product } from './schema/product.schema';
 @Controller('product')
 export class ProductController {
 
-    constructor(private readonly productService:ProductService){}
+    constructor(
+        private readonly productService:ProductService
+        ){}
 
     @ApiCreatedResponse({ type: Product, description: 'post a product' })
     @ApiBadRequestResponse({ description: 'False Request Payload' })
@@ -60,6 +62,11 @@ export class ProductController {
             ...product['_doc'],
             sub_products: await this.productService.findSubProduct(product['_doc']._id.valueOf())
         }
+
+        // /* istanbul ignore next */
+        // await this.productService.addRecordToIndex('products', {
+        //     "test_dulu": "cob-coba dulu"
+        // })
 
         return product
     }

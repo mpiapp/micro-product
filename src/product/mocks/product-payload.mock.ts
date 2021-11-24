@@ -9,6 +9,7 @@ export const MockId = {
 
 export const ProductPayload = {
     vendor_id: "vendor123",
+    vendor_name: "tukang kupas",
     name: "pengupas alpukat",
     description: "blender",
     brand: "mitochiba",
@@ -43,6 +44,7 @@ export const ProductPayload = {
 export const ProductPayloadService = {
     id: stringId,
     vendor_id: "vendor123",
+    vendor_name: "tukang kupas",
     name: "pengupas alpukat",
     description: "blender",
     brand: "mitochiba",
@@ -78,6 +80,7 @@ export const ProductPayloadService = {
 export const SuccsessCreateProduct = {
     id: stringId,
     vendor_id: "vendor123",
+    vendor_name: "tukang kupas",
     name: "pengupas alpukat",
     description: "blender",
     brand: "mitochiba",
@@ -114,6 +117,7 @@ export const SuccsessGetProductById = (id) => {
     return {
         id: id,
         vendor_id: "vendor123",
+        vendor_name: "tukang kupas",
         name: "pengupas alpukat",
         description: "blender",
         brand: "mitochiba",
@@ -151,6 +155,7 @@ export const SuccsessUpdateProduct = (id) => {
     return {
         id: id,
         vendor_id: "vendor123",
+        vendor_name: "tukang kupas",
         name: "pengupas alpukat",
         description: "blender",
         brand: "mitochiba",
@@ -188,6 +193,7 @@ export const ArrayOfObjectProduct = [
     {
         _id: 'Product1',
         vendor_id: "vendor123",
+        vendor_name: "tukang kupas",
         name: "pengupas alpukat",
         description: "blender",
         brand: "mitochiba",
@@ -222,6 +228,7 @@ export const ArrayOfObjectProduct = [
     {   
         _id: 'Product2',
         vendor_id: "vendor123",
+        vendor_name: "tukang kupas",
         name: "pengupas pisang",
         description: "pengupas pisang canggih",
         brand: "samsung",

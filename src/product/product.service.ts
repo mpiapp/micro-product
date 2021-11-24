@@ -6,6 +6,7 @@ import { CreateProductDTO } from './dto/create_product.dto';
 import { IdDTO } from './dto/id.dto';
 import { UpdateProductDTO } from './dto/update_product.dto';
 import { SubProduct, SubProductDocument } from '../sub-product/schema/sub-product.schema';
+// import { AlgoliaService } from 'nestjs-algolia';
 
 @Injectable()
 export class ProductService {
@@ -13,6 +14,7 @@ export class ProductService {
     constructor(
         @InjectModel(Product.name) private readonly productModel: Model<ProductDocument>,
         @InjectModel(SubProduct.name) private readonly subProductModel: Model<SubProductDocument>,
+        // private readonly algoliaService:AlgoliaService
     ){}
 
     async create(body: CreateProductDTO): Promise<Product> {
@@ -40,4 +42,12 @@ export class ProductService {
         return this.productModel.findByIdAndDelete(id)
     }
 
+    // /* istanbul ignore next */
+    // async addRecordToIndex(
+    //     indexName: string,
+    //     record: any
+    // ): Promise<any> {
+    //     const index = await this.algoliaService.initIndex(indexName);
+    //     return index.addObject(record)
+    // }
 }

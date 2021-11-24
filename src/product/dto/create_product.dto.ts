@@ -17,6 +17,10 @@ export class CreateProductDTO {
 
     @ApiProperty()
     @Prop()
+    vendor_name: string
+
+    @ApiProperty()
+    @Prop()
     name: string
 
     @ApiProperty()
