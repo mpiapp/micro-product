@@ -1,92 +1,49 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsIn } from "class-validator";
-import { Document } from "mongoose";
+import { IsIn, IsMongoId, IsOptional } from "class-validator";
+import { ProductDimension, ProductStorage } from "../schema/product.schema";
 
-export type ProductDocument = Product & Document;
-
-@Schema()
-export class ProductDimension {
-    @ApiProperty()
-    @Prop()
-    width: number
+export class UpdateProductDTO {
 
     @ApiProperty()
-    @Prop()
-    length: number
+    @IsOptional()
+    @IsMongoId()
+    @IsOptional()
+    _id?: string;
 
     @ApiProperty()
     @Prop()
-    height: number
-
-    @ApiProperty()
-    @Prop()
-    weight: number
-}
-
-@Schema()
-export class ProductStorage {
-    @ApiProperty()
-    @Prop()
-    rack: string
-
-    @ApiProperty()
-    @Prop()
-    bin: string
-
-    @ApiProperty()
-    @Prop()
-    level: string
-}
-
-@Schema()
-export class Product {
-    @ApiProperty()
-    @Prop()
-    vendor_id: string
-
-    @ApiProperty()
-    @Prop()
-    vendor_name: string
-
-    @ApiProperty()
-    @Prop()
+    @IsOptional()
     name: string
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     description: string
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     brand: string
 
     @ApiProperty()
     @Prop()
-    slug_product: string
-
-    @ApiProperty()
-    @Prop()
+    @IsOptional()
     category_id: string
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     retail_price: number
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     discount: number
 
     @ApiProperty()
     @Prop()
-    discount_price: number
-
-    @ApiProperty()
-    @Prop()
-    include_other_discount: boolean
-
-    @ApiProperty()
-    @Prop()
+    @IsOptional()
     images_product: string
 
     @ApiProperty()
@@ -108,35 +65,40 @@ export class Product {
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     stock: number
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     minimum_order_quantity: number
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     warehouse_id: string
-    
-    @ApiProperty()
-    @Prop(ProductStorage)
-    storage: ProductStorage
 
     @ApiProperty()
     @Prop()
-    sub_products: any[]
+    @IsOptional()
+    include_other_discount: boolean
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     term_of_payment_id : string
 
     @ApiProperty()
     @Prop()
+    @IsOptional()
     down_payment : number
     
     @ApiProperty()
     @Prop()
+    @IsOptional()
     SKU: string
+    
+    @ApiProperty()
+    @Prop(ProductStorage)
+    storage: ProductStorage
 }
-
-export const ProductSchema = SchemaFactory.createForClass(Product)

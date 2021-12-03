@@ -1,46 +1,16 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsIn } from "class-validator";
-import { Document } from "mongoose";
+import { IsIn, IsMongoId, IsOptional } from "class-validator";
+import { ProductDimension, ProductStorage } from "../schema/product.schema";
 
-export type ProductDocument = Product & Document;
-
-@Schema()
-export class ProductDimension {
-    @ApiProperty()
-    @Prop()
-    width: number
+export class CreateProductDTO {
 
     @ApiProperty()
-    @Prop()
-    length: number
+    @IsOptional()
+    @IsMongoId()
+    @IsOptional()
+    _id?: string;
 
-    @ApiProperty()
-    @Prop()
-    height: number
-
-    @ApiProperty()
-    @Prop()
-    weight: number
-}
-
-@Schema()
-export class ProductStorage {
-    @ApiProperty()
-    @Prop()
-    rack: string
-
-    @ApiProperty()
-    @Prop()
-    bin: string
-
-    @ApiProperty()
-    @Prop()
-    level: string
-}
-
-@Schema()
-export class Product {
     @ApiProperty()
     @Prop()
     vendor_id: string
@@ -63,7 +33,8 @@ export class Product {
 
     @ApiProperty()
     @Prop()
-    slug_product: string
+    @IsOptional()
+    slug_product?: string
 
     @ApiProperty()
     @Prop()
@@ -80,10 +51,6 @@ export class Product {
     @ApiProperty()
     @Prop()
     discount_price: number
-
-    @ApiProperty()
-    @Prop()
-    include_other_discount: boolean
 
     @ApiProperty()
     @Prop()
@@ -117,14 +84,10 @@ export class Product {
     @ApiProperty()
     @Prop()
     warehouse_id: string
-    
-    @ApiProperty()
-    @Prop(ProductStorage)
-    storage: ProductStorage
 
     @ApiProperty()
     @Prop()
-    sub_products: any[]
+    include_other_discount: boolean
 
     @ApiProperty()
     @Prop()
@@ -136,7 +99,10 @@ export class Product {
     
     @ApiProperty()
     @Prop()
+    @IsOptional()
     SKU: string
+    
+    @ApiProperty()
+    @Prop(ProductStorage)
+    storage: ProductStorage
 }
-
-export const ProductSchema = SchemaFactory.createForClass(Product)
