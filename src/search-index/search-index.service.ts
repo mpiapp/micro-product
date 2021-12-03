@@ -10,8 +10,6 @@ export class SearchIndexService {
             record: any
         ): Promise<any> {
             const index = await this.algoliaService.initIndex(indexName);
-            index.a
-
             return index.addObject(record);
     }
 }

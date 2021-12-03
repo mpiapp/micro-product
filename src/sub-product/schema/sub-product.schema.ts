@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsIn } from "class-validator";
 import { Document, Schema as MongooseSchema } from "mongoose";
 import { Product } from "../../product/schema/product.schema";
 

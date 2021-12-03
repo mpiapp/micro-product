@@ -1,4 +1,3 @@
-import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 import { SearchIndexService } from './search-index.service';
 

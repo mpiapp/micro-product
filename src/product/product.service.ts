@@ -6,15 +6,13 @@ import { CreateProductDTO } from './dto/create_product.dto';
 import { IdDTO } from './dto/id.dto';
 import { UpdateProductDTO } from './dto/update_product.dto';
 import { SubProduct, SubProductDocument } from '../sub-product/schema/sub-product.schema';
-// import { AlgoliaService } from 'nestjs-algolia';
 
 @Injectable()
 export class ProductService {
 
     constructor(
         @InjectModel(Product.name) private readonly productModel: Model<ProductDocument>,
-        @InjectModel(SubProduct.name) private readonly subProductModel: Model<SubProductDocument>,
-        // private readonly algoliaService:AlgoliaService
+        @InjectModel(SubProduct.name) private readonly subProductModel: Model<SubProductDocument>
     ){}
 
     async create(body: CreateProductDTO): Promise<Product> {

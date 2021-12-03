@@ -7,7 +7,7 @@ export const MockId = {
     id: stringId
 }
 
-export const ProductPayload = {
+const ProductObject = {
     vendor_id: "vendor123",
     vendor_name: "tukang kupas",
     name: "pengupas alpukat",
@@ -41,7 +41,7 @@ export const ProductPayload = {
     SKU: "product001"
 }
 
-export const ProductPayloadService = {
+const ProductObjectService = {
     id: stringId,
     vendor_id: "vendor123",
     vendor_name: "tukang kupas",
@@ -77,116 +77,21 @@ export const ProductPayloadService = {
     SKU: "product001"
 }
 
-export const SuccsessCreateProduct = {
-    id: stringId,
-    vendor_id: "vendor123",
-    vendor_name: "tukang kupas",
-    name: "pengupas alpukat",
-    description: "blender",
-    brand: "mitochiba",
-    category_id: "007",
-    retail_price: 10000,
-    discount: 0.2,
-    images_product: "https://google.com",
-    dimension: {
-        width: 50,
-        length: 100,
-        height: 90,
-        weight: 200
-    },
-    status: "DRAFT",
-    measurement_id: "ABC123",
-    stock: 50,
-    minimum_order_quantity: 1,
-    warehouse_id: "whs1",
-    storage: {
-        rack: "rack1",
-        bin: "bin2",
-        level: "4a"
-    },
-    slug_product: "vendor123_pengupas_alpukat", 
-    discount_price: 8000, 
-    reported_times: 0,
-    include_other_discount: true,
-    term_of_payment_id : "top001",
-    down_payment : 2000000,
-    SKU: "product001"
-}
+export const ProductPayload = ProductObject
+
+export const ProductPayloadService = ProductObjectService
+
+export const SuccsessCreateProduct = ProductObjectService
 
 export const SuccsessGetProductById = (id) => {
     return {
+        ...ProductObjectService,
         id: id,
-        vendor_id: "vendor123",
-        vendor_name: "tukang kupas",
-        name: "pengupas alpukat",
-        description: "blender",
-        brand: "mitochiba",
-        category_id: "007",
-        retail_price: 10000,
-        discount: 0.2,
-        images_product: "https://google.com",
-        dimension: {
-            width: 50,
-            length: 100,
-            height: 90,
-            weight: 200
-        },
-        status: "DRAFT",
-        measurement_id: "ABC123",
-        stock: 50,
-        minimum_order_quantity: 1,
-        warehouse_id: "whs1",
-        storage: {
-            rack: "rack1",
-            bin: "bin2",
-            level: "4a"
-        },
-        slug_product: "vendor123_pengupas_alpukat", 
-        discount_price: 8000, 
-        reported_times: 0,
-        include_other_discount: true,
-        term_of_payment_id : "top001",
-        down_payment : 2000000,
-        SKU: "product001"
     }
 }
 
-export const SuccsessUpdateProduct = (id) => {
-    return {
-        id: id,
-        vendor_id: "vendor123",
-        vendor_name: "tukang kupas",
-        name: "pengupas alpukat",
-        description: "blender",
-        brand: "mitochiba",
-        category_id: "007",
-        retail_price: 10000,
-        discount: 0.2,
-        images_product: "https://google.com",
-        dimension: {
-            width: 50,
-            length: 100,
-            height: 90,
-            weight: 200
-        },
-        status: "DRAFT",
-        measurement_id: "ABC123",
-        stock: 50,
-        minimum_order_quantity: 1,
-        warehouse_id: "whs1",
-        storage: {
-            rack: "rack1",
-            bin: "bin2",
-            level: "4a"
-        },
-        slug_product: "vendor123_pengupas_alpukat", 
-        discount_price: 8000, 
-        reported_times: 0,
-        include_other_discount: true,
-        term_of_payment_id : "top001",
-        down_payment : 2000000,
-        SKU: "product001"
-    }
+export function SuccsessUpdateProduct(id) {
+    return SuccsessGetProductById(id)
 }
 
 export const ArrayOfObjectProduct = [

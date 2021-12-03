@@ -1,6 +1,5 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
-// import { AlgoliaService } from 'nestjs-algolia';
 import { ArrayOfObjectSubProduct } from '../sub-product/mocks/product-payload.mock';
 import { SubProductServiceMock } from '../sub-product/mocks/sub_product-service.mock';
 import { SubProduct } from '../sub-product/schema/sub-product.schema';

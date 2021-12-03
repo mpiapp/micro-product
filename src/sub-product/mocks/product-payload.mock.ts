@@ -55,18 +55,8 @@ export const SuccsessGetSubProductById = (id) => {
     }
 }
 
-export const SuccsessUpdateSubProduct = (id) => {
-    return {
-        id: id,
-        product_id: "product123",
-        variance: "50m red",
-        image_sub_product: ["image1", "image2"],
-        made_date: new Date('December 25, 1995 23:15:30'),
-        expired_date: new Date('December 25, 2021 23:15:30'),
-        quantity: 40,
-        slug_sub_product: "product123_50m_red",
-        safety_stock_quantity: 5
-    }
+export function SuccsessUpdateSubProduct(id) {
+    return SuccsessGetSubProductById(id)
 }
 
 export const ArrayOfObjectSubProduct = [
